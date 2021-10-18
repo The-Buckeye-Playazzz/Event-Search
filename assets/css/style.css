@@ -1,16 +1,36 @@
+:root {
+  --color1: whitesmoke;
+}
+
 body{
-    background-color: gray;
+    background-color: rgb(7, 3, 26);
 }
-
-.jumbotron h1 {
+.jumbotron {
+    text-align: center;
     font-size:60px;
+    background-color: black;
 }
-
+.jumbotron h1{
+    font-size:80px;
+}
+.lead {
+    text-align: center;
+    color: var(--color1);
+}
 h2 {
-    color:whitesmoke;
+    color: var(--color1);
+    margin-left: 75px;
+    margin-bottom: 35px;
 }
-
+#search-input{
+    margin-left: 75px;
+    margin-bottom: 35px;
+}
 #search-button{
     background-color: blue;
-    color: whitesmoke;
+    color: var(--color1);
+}
+.results-container {
+    background-color: black;
+    text-align: center;
 }
