@@ -1,0 +1,1 @@
+ticketmasterApi = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=FwyMEHGWc3ybkab0m3FG8jMPqqlKi5QP"
