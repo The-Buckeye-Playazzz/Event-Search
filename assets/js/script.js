@@ -1,7 +1,7 @@
 // declaring variables
 searchInputEl = document.getElementById("search-input");
 searchButtonEl = document.getElementById("search-button");
-resultsContainerEl = document.querySelectorAll(".results-container");
+resultsContainerEl = document.querySelector(".results-container");
 
 // defining primary function
 function searchNearbyEvents() {
@@ -17,10 +17,20 @@ function searchNearbyEvents() {
             console.log(data._embedded.events);
             for (var i = 0; i < data._embedded.events.length; i++) {
                 var createName = document.createElement("h2");
+                var createDate = document.createElement("p");
+                var createTime = document.createElement("p");
+                var createLink = document.createElement("a");
 
                 createName.textContent = data._embedded.events[i].name;
+                createDate.textContent = data._embedded.events[i].dates.start.localDate;
+                createTime.textContent = data._embedded.events[i].dates.start.localTime;
+                createLink.textContent = "Purchase tickets";
+                createLink.href = data._embedded.events[i].url;
 
-                resultsContainerEl.append(createName);
+                createName.appendChild(createDate);
+                createName.appendChild(createTime);
+                createName.appendChild(createLink);
+                resultsContainerEl.appendChild(createName);
             }
         })
 }
