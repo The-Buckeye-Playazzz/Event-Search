@@ -1,0 +1,16 @@
+body{
+    background-color: gray;
+}
+
+.jumbotron h1 {
+    font-size:60px;
+}
+
+h2 {
+    color:whitesmoke;
+}
+
+#search-button{
+    background-color: blue;
+    color: whitesmoke;
+}
