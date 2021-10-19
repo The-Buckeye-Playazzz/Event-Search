@@ -6,6 +6,8 @@ resultsContainerEl = document.querySelector(".results-container");
 // defining primary function
 function searchNearbyEvents() {
     ticketmasterUrl = "https://app.ticketmaster.com/discovery/v2/events.json?city=" + searchInputEl.value + "&apikey=FwyMEHGWc3ybkab0m3FG8jMPqqlKi5QP";
+    weatherUrl = "api.openweathermap.org/data/2.5/weather?q=" + searchInputEl.value + "&appid=2aa854b2e1b53a068dd2a8b6738c490f";
+    console.log(weatherUrl);
 
     fetch(ticketmasterUrl)
         .then(function (response) {
@@ -29,6 +31,10 @@ function searchNearbyEvents() {
                 createName.appendChild(createTime);
                 createName.appendChild(createLink);
                 resultsContainerEl.appendChild(createName);
+            }
+            for (var i = 0; i < data._embedded.events.length; i++) {
+                var scheduledDate = data._embedded.events[i].dates.start.localDate;
+                console.log(scheduledDate);
             }
         })
 }
