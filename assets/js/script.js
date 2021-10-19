@@ -41,3 +41,11 @@ function searchNearbyEvents() {
 
 // event listener for when search button is pressed
 searchButtonEl.addEventListener("click", searchNearbyEvents);
+
+var input = document.getElementById("search-input");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("search-button").click();
+  }
+});

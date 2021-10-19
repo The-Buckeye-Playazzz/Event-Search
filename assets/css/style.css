@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: rgb(7, 3, 26);
+    background-color: rgb(5, 14, 97);
 }
 .jumbotron {
     text-align: center;
@@ -12,10 +12,12 @@ body{
 }
 .jumbotron h1{
     font-size:80px;
+    color: gray;
 }
 .lead {
     text-align: center;
     color: var(--color1);
+    font-size: 50px;
 }
 h2 {
     color: var(--color1);
