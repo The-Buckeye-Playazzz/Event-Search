@@ -86,22 +86,22 @@ function searchNearbyEvents() {
             .then(function (data) {
                 var far = data.current.temp;
                 var temperature = document.createElement("p");
-                temperature.textContent = far;
+                temperature.textContent = "The Temperature Today is " + far + "deg's Farenheit";
                 console.log(data.current.temp);
                 var dscptn = data.current.weather[0].description;
                 var desc = document.createElement("p");
-                desc.textContent = dscptn;
+                desc.textContent ="With " + dscptn +", it feels like it's ";
                 console.log(data.current.weather[0].description);
                 var feelsLike = data.current.feels_like;
                 var flsLike = document.createElement("p");
-                flsLike.textContent = feelsLike;
+                flsLike.textContent = feelsLike + "deg's Farenheit Outside";
                 console.log(data.current.feels_like);
                 console.log(far);
                 console.log(dscptn);
                 console.log(feelsLike);
                 weatherContainer.appendChild(temperature);
-                weatherContainer.appendChild(flsLike);
                 weatherContainer.appendChild(desc);
+                weatherContainer.appendChild(flsLike);
         
             });
 

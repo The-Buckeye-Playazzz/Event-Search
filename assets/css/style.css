@@ -36,10 +36,14 @@ h2 {
     background-color: black;
     text-align: center;
 }
+.weather-container{
+    margin-right: 75px;
+}
 .search-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     color: white;
+    text-align: right;
 }
