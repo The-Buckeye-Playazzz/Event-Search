@@ -36,3 +36,10 @@ h2 {
     background-color: black;
     text-align: center;
 }
+.search-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+}

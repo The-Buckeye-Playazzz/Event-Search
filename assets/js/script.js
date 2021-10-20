@@ -2,6 +2,13 @@
 searchInputEl = document.getElementById("search-input");
 searchButtonEl = document.getElementById("search-button");
 resultsContainerEl = document.querySelector(".results-container");
+weatherContainer = document.querySelector(".weather-container");
+var DBAPIKey = "d8b292d44e355a51cd5073ffcd942ffa";
+var city = "columbus";
+var cords = ["",""];               
+ var far;
+ var dscptn;
+
 
 // defining primary function
 function searchNearbyEvents() {
@@ -37,6 +44,74 @@ function searchNearbyEvents() {
                 console.log(scheduledDate);
             }
         })
+
+        function getLatLon() {
+
+            var crdntsURL ="http://api.openweathermap.org/geo/1.0/direct?q=" + city + ",OH,US&limit=5&appid=" + DBAPIKey;
+        
+            fetch(crdntsURL).then(
+                function(response){
+                    return response.json();
+                })
+                .then(function (data) {
+        
+                    Lat = JSON.stringify(data[0].lat);
+                    Lon = JSON.stringify(data[0].lon);
+                    Lat = Lat.split("", 5);
+                    Lon = Lon.split("", 6); 
+                    Lat = Lat.join("");
+                    Lon = Lon.join("");    
+                    cords[0] = Lat;
+                    cords[1] = Lon;      
+                    console.log(cords);
+                    getAPi();
+                });
+                
+        }
+        getLatLon();
+        //console.log(cords);
+        function getAPi() {
+
+            console.log(cords[0]);
+            console.log(cords[1]);
+            var weatherAPIurl =
+            "https://api.openweathermap.org/data/2.5/onecall?lat=" + cords[0] + "&lon=" + cords[1] + "&units=imperial&exclude=minutely,hourly&appid=" + DBAPIKey;
+            console.log(weatherAPIurl);
+            fetch(weatherAPIurl).then(
+                function(response){
+                    return response.json();
+        
+                }
+            )
+            .then(function (data) {
+                var far = data.current.temp;
+                var temperature = document.createElement("p");
+                temperature.textContent = far;
+                console.log(data.current.temp);
+                var dscptn = data.current.weather[0].description;
+                var desc = document.createElement("p");
+                desc.textContent = dscptn;
+                console.log(data.current.weather[0].description);
+                var feelsLike = data.current.feels_like;
+                var flsLike = document.createElement("p");
+                flsLike.textContent = feelsLike;
+                console.log(data.current.feels_like);
+                console.log(far);
+                console.log(dscptn);
+                console.log(feelsLike);
+                weatherContainer.appendChild(temperature);
+                weatherContainer.appendChild(flsLike);
+                weatherContainer.appendChild(desc);
+        
+            });
+
+                
+
+        }
+        
+        // getAPi();
+        
+
 }
 
 // event listener for when search button is pressed
