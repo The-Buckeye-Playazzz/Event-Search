@@ -2,7 +2,7 @@
 
 ## Description
 
-Our deployed application can be viewed here:
+Our deployed application can be viewed [here](https://the-buckeye-playazzz.github.io/Event-Search/)
 
 Our team set out to address the following user story:
 
