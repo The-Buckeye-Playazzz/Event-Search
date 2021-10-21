@@ -9,14 +9,14 @@ var dscptn;
 
 // function to display nearby events
 function searchNearbyEvents() {
-    ticketmasterUrl = "https://app.ticketmaster.com/discovery/v2/events.json?city=" + searchInputEl.value + "&sort=date,asc&apikey=FwyMEHGWc3ybkab0m3FG8jMPqqlKi5QP";
+    var currentDate = moment().format("YYYY-MM-DD");
+    ticketmasterUrl = "https://app.ticketmaster.com/discovery/v2/events.json?city=" + searchInputEl.value + "&startDateTime=" + currentDate + "T00:00:00Z&sort=date,asc&apikey=FwyMEHGWc3ybkab0m3FG8jMPqqlKi5QP";
 
     fetch(ticketmasterUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data._embedded.events);
             for (var i = 0; i < data._embedded.events.length; i++) {
                 var createName = document.createElement("h2");
                 var createDate = document.createElement("p");
@@ -46,7 +46,6 @@ function displayWeather() {
         return response.json();
     })
     .then(function (data) {
-        console.log(data);
 
         var far = data.main.temp;
         var temperature = document.createElement("p");
