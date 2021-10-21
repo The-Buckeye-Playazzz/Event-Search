@@ -66,10 +66,18 @@ function displayWeather() {
     })
 }
 
+// function to clear previous search upon a new search
+function clearContent () {
+    resultsContainerEl.innerHTML = "";
+    weatherContainer.innerHTML = "";
+}
+
 // event listener for when search button is pressed
 searchButtonEl.addEventListener("click", function(event) {
     event.preventDefault();
 
+    clearContent();
     searchNearbyEvents();
     displayWeather();
+
 });
