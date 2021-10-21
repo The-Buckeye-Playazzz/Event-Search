@@ -6,6 +6,8 @@ body{
     background-color: rgb(5, 14, 97);
 }
 .jumbotron {
+    background: url("../images/es-logo.png") no-repeat right;
+    background-size: 200px;
     text-align: center;
     font-size:60px;
     background-color: black;
