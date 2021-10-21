@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +10,28 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 </head>
-<body>
 
+<body>
+    <!-- header -->
     <div class="jumbotron">
         <h1 class="display-4">Event Search</h1>
         <p class="lead">Find local events.</p>
         <hr class="my-4">
     </div>
-
+    <!-- search input -->
     <div class="search-container">
         <div>
             <h2>Looking for upcoming events near you?</h2>
-            <input id= "search-input" name="search-input" type="text" placeholder="Enter your location here."></input>
+            <input id="search-input" name="search-input" type="text" placeholder="Enter your city here."></input>
             <button id="search-button">Search!</button>
         </div>
+        <!-- empty div to display weather -->
         <div class="weather-container"></div>
     </div>
-    
+    <!-- empty div to display search results -->
     <div class="results-container"></div>
+
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
