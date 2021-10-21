@@ -18,10 +18,18 @@ function searchNearbyEvents() {
 
             // create and display current events
             for (var i = 0; i < data._embedded.events.length; i++) {
+                var createCard = document.createElement("div");
+                var createCardBody = document.createElement("div");
                 var createName = document.createElement("h2");
                 var createDate = document.createElement("p");
                 var createTime = document.createElement("p");
                 var createLink = document.createElement("a");
+
+                createCard.classList.add("card", "w-50", "my-5", "p-3", "justify-content-center");
+                createCardBody.classList.add("card-body");
+                createName.classList.add("card-title");
+                createDate.classList.add("card-subtitle");
+                createLink.classList.add("card-link");
 
                 createName.textContent = data._embedded.events[i].name;
                 createDate.textContent = data._embedded.events[i].dates.start.localDate;
@@ -30,13 +38,16 @@ function searchNearbyEvents() {
 
                 // formats time of event if there is one
                 if (data._embedded.events[i].dates.start.localTime) {
-                    createTime.textContent = moment(data._embedded.events[i].dates.start.localTime, "HH:mm:ss").format("hh:mm A"); 
+                    createTime.textContent = moment(data._embedded.events[i].dates.start.localTime, "HH:mm:ss").format("hh:mm A");
+                    createTime.classList.add("card-subtitle");
                 }
 
-                createName.appendChild(createDate);
-                createName.appendChild(createTime);
-                createName.appendChild(createLink);
-                resultsContainerEl.appendChild(createName);
+                createCardBody.appendChild(createName);
+                createCardBody.appendChild(createDate);
+                createCardBody.appendChild(createTime);
+                createCardBody.appendChild(createLink);
+                createCard.appendChild(createCardBody);
+                resultsContainerEl.appendChild(createCard);
             }
         })
 }
