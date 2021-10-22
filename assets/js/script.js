@@ -25,14 +25,15 @@ function searchNearbyEvents() {
                 var createTime = document.createElement("p");
                 var createLink = document.createElement("a");
 
-                createCard.classList.add("card", "w-50", "my-5", "p-3", "justify-content-center");
+                createCard.classList.add("card");
                 createCardBody.classList.add("card-body");
                 createName.classList.add("card-title");
                 createDate.classList.add("card-subtitle");
                 createLink.classList.add("card-link");
+                resultsContainerEl.classList.add("py-2");
 
                 createName.textContent = data._embedded.events[i].name;
-                createDate.textContent = data._embedded.events[i].dates.start.localDate;
+                createDate.textContent = moment(data._embedded.events[i].dates.start.localDate).format("MMM Do YY");
                 createLink.textContent = "Purchase tickets";
                 createLink.href = data._embedded.events[i].url;
 
