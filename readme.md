@@ -28,10 +28,10 @@ This project runs in the browser and requires no installation by the user.
 ## Usage
 
 The user is presented with a search box to type in the city they would like to search.
-![screenshot-01](https://user-images.githubusercontent.com/91210267/138298822-6c655ec0-c8d2-4ce9-8e5b-791b842f2c57.png)
+![screenshot-01](https://user-images.githubusercontent.com/91210267/138498190-d0902a47-19d5-4edd-840b-a043091324bf.png)
 
 Once the user types in the city and presses enter, the current weather is displayed on the right hand side and a list of events is displayed underneath.
-![screenshot-02](https://user-images.githubusercontent.com/91210267/138298839-379ead67-4edc-4901-9977-9b6f6a0bcf06.png)
+![screenshot-02](https://user-images.githubusercontent.com/91210267/138498211-ba537b5d-e59e-48d5-aab4-d3de5c7eec20.png)
 
 ## Credits
 
