@@ -48,6 +48,7 @@ h2 {
 }
 .weather-container {
   margin-right: 75px;
+  color: black;
 }
 .search-container {
   display: flex;
