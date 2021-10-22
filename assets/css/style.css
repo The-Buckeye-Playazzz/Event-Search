@@ -9,7 +9,7 @@ body {
 .jumbotron {
   text-align: center;
   font-size: 60px;
-  background-color: var(--color2);
+  background-image: linear-gradient(to bottom right, var(--color2), var(--color1));
   font-weight: bold;
 }
 .jumbotron h1 {
@@ -27,12 +27,14 @@ h2 {
   margin-bottom: 35px;
 }
 #search-input {
+  border-radius: 15px;
   margin-left: 75px;
   margin-bottom: 35px;
   font-weight: bold;
   color: black;
 }
 #search-button {
+  border-radius: 15px;
   background-color: var(--color2);
   color: var(--color1);
   font-weight: bold;
@@ -43,12 +45,11 @@ h2 {
   border-color: yellowgreen;
 }
 .results-container {
-  background-color: black;
+  background-image: linear-gradient(to right, var(--color2) , var(--color1));
   text-align: center;
 }
 .weather-container {
   margin-right: 75px;
-  color: black;
 }
 .search-container {
   display: flex;
@@ -57,15 +58,16 @@ h2 {
   justify-content: space-between;
   color: var(--color1);
   text-align: right;
-  background-color: whitesmoke;
+  background-image: linear-gradient(to right, var(--color1) , var(--color2));
 }
 .card {
+  border-radius: 20px;
   margin: 0 auto;
   float: none;
   margin-bottom: 10px;
   border: solid;
   border-width: 15px;
-  border-color: var(--color2);
+  border-color:var(--color2);
   width: 50%;
 }
 .card-title {
